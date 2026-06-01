@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delicias Cubanas — Auténtica Comida Criolla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:#FFF9F0;
+  color:#1A1A1A;
+  line-height:1.6;
+  overflow-x:hidden
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+::selection{background:#F2B705;color:#1A1A1A}
+
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700}
+
+.section{padding:6rem 1.5rem}
+.container{max-width:1200px;margin:0 auto}
+
+.section-title{
+  text-align:center;
+  font-size:2.8rem;
+  margin-bottom:0.5rem;
+  color:#1A1A1A
+}
+.section-subtitle{
+  text-align:center;
+  font-size:1rem;
+  color:#8E8E8E;
+  margin-bottom:3.5rem;
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+  font-weight:300
+}
+
+/* === NAV === */
+nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:100;
+  padding:1rem 2rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:all 0.4s ease
+}
+nav.scrolled{
+  background:rgba(26,26,26,0.95);
+  backdrop-filter:blur(12px);
+  padding:0.7rem 2rem;
+  box-shadow:0 1px 20px rgba(0,0,0,0.15)
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem;
+  color:#F2B705;
+  font-weight:700
+}
+.nav-links{
+  display:flex;
+  gap:2rem;
+  list-style:none
+}
+.nav-links a{
+  color:rgba(255,255,255,0.7);
+  font-size:0.85rem;
+  font-weight:500;
+  transition:color 0.3s ease;
+  letter-spacing:0.5px
+}
+.nav-links a:hover{color:#F2B705}
+
+/* === HERO === */
+#hero{
+  position:relative;
+  min-height:100vh;
+  background:linear-gradient(160deg,#0D0D0D 0%,#1A1A1A 30%,#2C1810 100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  overflow:hidden
+}
+
+/* Cuban tile pattern overlay */
+.hero-pattern{
+  position:absolute;
+  inset:0;
+  opacity:0.04;
+  background-image:
+    repeating-conic-gradient(#fff 0% 25%, transparent 0% 50%) 0 0 / 60px 60px,
+    repeating-conic-gradient(#fff 0% 25%, transparent 0% 50%) 30px 30px / 60px 60px;
+  pointer-events:none;
+  z-index:0
+}
+
+/* Radial glow accents */
+#hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 15% 45%, rgba(242,183,5,0.07) 0%, transparent 55%),
+    radial-gradient(circle at 85% 30%, rgba(217,74,42,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(242,183,5,0.04) 0%, transparent 40%);
+  pointer-events:none;
+  z-index:0
+}
+
+/* Caribbean wave bottom */
+#hero::after{
+  content:'';
+  position:absolute;
+  bottom:-2px;left:0;right:0;
+  height:180px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 180'%3E%3Cpath fill='%23FFF9F0' d='M0,96L48,106.7C96,117,192,139,288,138.7C384,139,480,117,576,101.3C672,85,768,75,864,80C960,85,1056,107,1152,117.3C1248,128,1344,128,1392,128L1440,128L1440,180L1392,180C1344,180,1248,180,1152,180C1056,180,960,180,864,180C768,180,672,180,576,180C480,180,384,180,288,180C192,180,96,180,48,180L0,180Z'/%3E%3C/svg%3E") no-repeat bottom / cover;
+  pointer-events:none;
+  z-index:3
+}
+
+/* Floating palm leaves */
+.palm-leaf{
+  position:absolute;
+  z-index:0;
+  opacity:0.08;
+  pointer-events:none
+}
+.palm-leaf svg{
+  width:100%;height:100%
+}
+.palm-leaf--1{
+  top:-5%;left:-3%;
+  width:280px;height:280px;
+  animation:drift 18s ease-in-out infinite
+}
+.palm-leaf--2{
+  bottom:10%;right:-4%;
+  width:220px;height:220px;
+  animation:drift 22s ease-in-out infinite reverse
+}
+.palm-leaf--3{
+  top:25%;right:8%;
+  width:160px;height:160px;
+  animation:drift 14s ease-in-out infinite 3s
+}
+@keyframes drift{
+  0%,100%{transform:translate(0,0) rotate(0deg)}
+  25%{transform:translate(15px,-20px) rotate(3deg)}
+  50%{transform:translate(-10px,-35px) rotate(-2deg)}
+  75%{transform:translate(20px,-10px) rotate(4deg)}
+}
+
+/* Hero content */
+.hero-content{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  perspective:800px
+}
+
+/* Logo */
+.hero-logo{
+  width:200px;height:200px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #F2B705;
+  box-shadow:0 0 40px rgba(242,183,5,0.1), 0 0 80px rgba(242,183,5,0.05), 0 20px 60px rgba(0,0,0,0.4);
+  margin-bottom:2rem;
+  position:relative;
+  animation:logoGlow 3s ease-in-out infinite;
+  transition:transform 0.1s ease-out;
+  will-change:transform
+}
+@keyframes logoGlow{
+  0%,100%{box-shadow:0 0 40px rgba(242,183,5,0.1), 0 0 80px rgba(242,183,5,0.05), 0 20px 60px rgba(0,0,0,0.4)}
+  50%{box-shadow:0 0 60px rgba(242,183,5,0.2), 0 0 120px rgba(242,183,5,0.08), 0 20px 60px rgba(0,0,0,0.4)}
+}
+
+/* Entrance animations */
+.hero-logo{
+  animation:logoGlow 3s ease-in-out infinite, logoEntrance 1s cubic-bezier(0.34,1.56,0.64,1) forwards
+}
+@keyframes logoEntrance{
+  0%{opacity:0;transform:scale(0.7)}
+  100%{opacity:1;transform:scale(1)}
+}
+
+.hero-divider{
+  width:0;
+  height:2px;
+  background:#F2B705;
+  margin:1.5rem auto;
+  position:relative;
+  animation:dividerExpand 0.8s ease-out 0.4s forwards
+}
+@keyframes dividerExpand{
+  0%{width:0;opacity:0}
+  100%{width:80px;opacity:1}
+}
+
+#hero h1{
+  font-size:4.5rem;
+  letter-spacing:0;
+  margin-bottom:0.5rem;
+  color:#F2B705;
+  text-shadow:0 2px 20px rgba(0,0,0,0.3);
+  animation:titleReveal 0.8s ease-out 0.2s both
+}
+@keyframes titleReveal{
+  0%{opacity:0;letter-spacing:20px;filter:blur(4px)}
+  60%{filter:blur(0)}
+  100%{opacity:1;letter-spacing:3px}
+}
+
+#hero .tagline{
+  font-size:1.1rem;
+  color:rgba(255,255,255,0.6);
+  font-weight:300;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  animation:taglineFade 0.8s ease-out 0.6s both
+}
+@keyframes taglineFade{
+  0%{opacity:0;transform:translateY(10px)}
+  100%{opacity:1;transform:translateY(0)}
+}
+
+/* Scroll indicator */
+.hero-scroll{
+  position:absolute;
+  bottom:4rem;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:4;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  animation:scrollAppear 0.8s ease-out 1.2s both
+}
+@keyframes scrollAppear{
+  0%{opacity:0}
+  100%{opacity:1}
+}
+.hero-scroll-text{
+  font-size:0.65rem;
+  color:rgba(255,255,255,0.3);
+  letter-spacing:3px;
+  text-transform:uppercase
+}
+.hero-scroll-line{
+  width:1px;
+  height:32px;
+  background:linear-gradient(to bottom, rgba(242,183,5,0.6), transparent);
+  animation:scrollPulse 2s ease-in-out infinite
+}
+@keyframes scrollPulse{
+  0%,100%{transform:scaleY(1);opacity:1}
+  50%{transform:scaleY(0.4);opacity:0.3}
+}
+
+/* === CARRUSEL — HORIZONTAL PARALLAX === */
+#carrusel{
+  background:#0D0D0D;
+  padding:0;
+  position:relative
+}
+.carousel-wrapper{
+  position:relative;
+  overflow:hidden;
+  width:100%
+}
+
+/* Track horizontal */
+.carousel-track{
+  display:flex;
+  transition:transform 0.85s cubic-bezier(0.65,0,0.35,1);
+  will-change:transform
+}
+.carousel-slide{
+  min-width:100%;
+  height:80vh;
+  flex-shrink:0;
+  position:relative;
+  overflow:hidden
+}
+.carousel-slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1);
+  transition:transform 9s cubic-bezier(0.25,0.46,0.45,0.94) 0.2s
+}
+.carousel-slide.active img{
+  transform:scale(1.18)
+}
+
+/* Gradient overlay */
+.carousel-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 45%, rgba(0,0,0,0.1) 100%);
+  z-index:3;
+  pointer-events:none
+}
+
+/* Film grain texture */
+.carousel-grain{
+  position:absolute;
+  inset:0;
+  z-index:4;
+  pointer-events:none;
+  opacity:0.07;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat:repeat;
+  background-size:256px 256px;
+  animation:grainShift 0.5s steps(3) infinite
+}
+@keyframes grainShift{
+  0%{transform:translate(0,0)}
+  33%{transform:translate(-2px,3px)}
+  66%{transform:translate(3px,-1px)}
+}
+
+/* Progress bar */
+.carousel-progress{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:3px;
+  background:rgba(255,255,255,0.08);
+  z-index:10
+}
+.carousel-progress-bar{
+  height:100%;
+  background:#F2B705;
+  width:0%;
+  transition:width 0.1s linear;
+  box-shadow:0 0 16px rgba(242,183,5,0.5)
+}
+
+/* Controls */
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:56px;height:56px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.06);
+  cursor:pointer;
+  z-index:10;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all 0.4s ease;
+  color:rgba(255,255,255,0.5)
+}
+.carousel-btn svg{
+  width:22px;height:22px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  transition:transform 0.3s ease
+}
+.carousel-btn:hover{
+  background:#F2B705;
+  border-color:#F2B705;
+  color:#1A1A1A
+}
+.carousel-btn:hover svg{
+  transform:scale(1.15)
+}
+.carousel-btn.prev{left:1.5rem}
+.carousel-btn.next{right:1.5rem}
+.carousel-dots{
+  position:absolute;
+  bottom:1.5rem;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:8px;
+  z-index:10;
+  flex-wrap:wrap;
+  justify-content:center;
+  max-width:50%
+}
+.carousel-dot{
+  width:6px;height:6px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.25);
+  border:none;
+  cursor:pointer;
+  transition:all 0.5s ease;
+  flex-shrink:0
+}
+.carousel-dot.active{
+  background:#F2B705;
+  width:24px;
+  border-radius:3px;
+  box-shadow:0 0 20px rgba(242,183,5,0.25)
+}
+.carousel-counter{
+  position:absolute;
+  bottom:1.3rem;
+  right:1.5rem;
+  color:rgba(255,255,255,0.3);
+  font-size:0.8rem;
+  font-weight:500;
+  z-index:10;
+  background:rgba(0,0,0,0.4);
+  padding:4px 14px;
+  border-radius:16px;
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  font-variant-numeric:tabular-nums;
+  letter-spacing:0.5px
+}
+
+/* === NUESTRA ESENCIA === */
+#esencia{background:#FFF9F0}
+.esencia-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:3rem;
+  margin-top:1rem
+}
+.esencia-card{
+  text-align:center;
+  padding:2rem 1.5rem
+}
+.esencia-icon{
+  width:80px;height:80px;
+  margin:0 auto 1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+.esencia-icon svg{
+  width:100%;height:100%
+}
+.esencia-card h3{
+  font-size:1.3rem;
+  margin-bottom:0.75rem;
+  color:#1A1A1A
+}
+.esencia-card p{
+  font-size:0.95rem;
+  color:#8E8E8E;
+  line-height:1.75;
+  max-width:320px;
+  margin:0 auto
+}
+
+/* === RATING BANNER === */
+#ratings{
+  background:linear-gradient(135deg,#1A1A1A,#2C1810);
+  padding:3rem 1.5rem
+}
+.ratings-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2rem;
+  max-width:900px;
+  margin:0 auto
+}
+.rating-item{
+  text-align:center;
+  color:#fff
+}
+.rating-stars{
+  display:flex;
+  justify-content:center;
+  gap:4px;
+  margin-bottom:0.5rem
+}
+.rating-stars svg{
+  width:18px;height:18px
+}
+.rating-number{
+  font-size:2rem;
+  font-weight:700;
+  font-family:'Playfair Display',serif;
+  color:#F2B705;
+  margin-bottom:0.25rem
+}
+.rating-label{
+  font-size:0.8rem;
+  color:rgba(255,255,255,0.5);
+  letter-spacing:0.5px
+}
+.rating-source{
+  font-size:0.7rem;
+  color:rgba(255,255,255,0.25);
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-top:0.25rem
+}
+
+/* === MENU (EXACT CARD CSS) === */
+#menu{
+  background:#FFF3E0;
+  padding:6rem 1.5rem;
+  position:relative
+}
+#menu::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:4px;
+  background:linear-gradient(90deg, #F2B705, #D94A2A, #F2B705);
+  opacity:0.6
+}
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:3rem 2rem;
+  padding:0.5rem 0
+}
+.card-dish{
+  background-color:#ffffff;
+  border-radius:24px;
+  padding:24px;
+  box-shadow:0px 15px 35px rgba(0,0,0,0.04);
+  text-align:center;
+  position:relative;
+  transition:transform 0.3s ease;
+  display:flex;
+  flex-direction:column;
+  align-items:center
+}
+.card-dish:hover{
+  transform:translateY(-8px)
+}
+.card-image-container{
+  margin-top:-60px;
+  margin-bottom:16px;
+  display:none
+}
+.card-dish-image{
+  width:140px;
+  height:140px;
+  object-fit:cover;
+  border-radius:50%;
+  filter:drop-shadow(0px 8px 16px rgba(0,0,0,0.15))
+}
+.card-title{
+  font-size:18px;
+  font-weight:600;
+  color:#1A1A1A;
+  margin-bottom:8px;
+  font-family:'Playfair Display',serif
+}
+.card-description{
+  font-size:13px;
+  color:#8E8E8E;
+  margin-bottom:16px;
+  max-width:200px;
+  line-height:1.6
+}
+.card-footer{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  margin-top:auto
+}
+.card-price{
+  font-size:18px;
+  font-weight:700;
+  color:#1A1A1A;
+  display:none
+}
+.card-add-button{
+  background-color:#F2B705;
+  border:none;
+  border-radius:20px;
+  padding:8px 16px;
+  font-weight:600;
+  cursor:pointer;
+  font-size:12px
+}
+.card-badge{
+  display:inline-block;
+  background-color:#F2B705;
+  border:none;
+  border-radius:20px;
+  padding:6px 16px;
+  font-weight:600;
+  font-size:11px;
+  color:#1A1A1A;
+  letter-spacing:0.5px;
+  text-transform:uppercase
+}
+
+/* === TESTIMONIOS === */
+#testimonios{
+  background:linear-gradient(160deg,#1A1A1A 0%,#2C1810 100%);
+  color:#fff;
+  padding:6rem 1.5rem
+}
+#testimonios .section-title{color:#fff}
+#testimonios .section-subtitle{color:rgba(255,255,255,0.5)}
+.testimonios-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+  gap:2rem
+}
+.testimonio-card{
+  background:rgba(255,255,255,0.04);
+  border-radius:20px;
+  padding:2rem 1.8rem;
+  border:1px solid rgba(255,255,255,0.06);
+  transition:transform 0.3s ease, background 0.3s ease
+}
+.testimonio-card:hover{
+  transform:translateY(-4px);
+  background:rgba(255,255,255,0.07)
+}
+.testimonio-text{
+  font-size:0.9rem;
+  line-height:1.7;
+  color:rgba(255,255,255,0.7);
+  font-style:italic;
+  margin-bottom:1.2rem;
+  font-weight:300
+}
+.testimonio-text::before{
+  content:'"';
+  font-size:2.5rem;
+  color:#F2B705;
+  font-family:'Playfair Display',serif;
+  line-height:1;
+  display:block;
+  margin-bottom:-0.2rem
+}
+.testimonio-stars{
+  display:flex;
+  gap:3px;
+  margin-bottom:0.75rem
+}
+.testimonio-stars svg{
+  width:14px;height:14px
+}
+.testimonio-author{
+  font-size:0.85rem;
+  color:#F2B705;
+  font-weight:600
+}
+.testimonio-source{
+  font-size:0.7rem;
+  color:rgba(255,255,255,0.2);
+  text-transform:uppercase;
+  letter-spacing:0.5px
+}
+
+/* === CONTACTO === */
+#contacto{
+  background:#FFF9F0;
+  padding:6rem 1.5rem
+}
+.contacto-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:start
+}
+.contacto-info h3{
+  font-size:1.5rem;
+  margin-bottom:1.5rem;
+  color:#1A1A1A
+}
+.contacto-item{
+  display:flex;
+  align-items:flex-start;
+  gap:1rem;
+  margin-bottom:1.5rem
+}
+.contacto-item svg{
+  width:22px;height:22px;
+  flex-shrink:0;
+  margin-top:2px
+}
+.contacto-item-text{}
+.contacto-item-text strong{
+  display:block;
+  font-size:0.85rem;
+  color:#1A1A1A;
+  margin-bottom:2px;
+  font-weight:600
+}
+.contacto-item-text span{
+  font-size:0.9rem;
+  color:#8E8E8E;
+  line-height:1.5
+}
+.contacto-map{
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+  height:380px
+}
+.contacto-map iframe{
+  width:100%;
+  height:100%;
+  border:none
+}
+
+/* === FOOTER === */
+footer{
+  background:#0D0D0D;
+  color:#fff;
+  padding:4rem 1.5rem 2rem
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:3rem;
+  max-width:1200px;
+  margin:0 auto
+}
+.footer-col h4{
+  font-size:1.1rem;
+  margin-bottom:1.2rem;
+  color:#F2B705;
+  font-family:'Playfair Display',serif
+}
+.footer-col p,.footer-col li{
+  font-size:0.9rem;
+  color:rgba(255,255,255,0.5);
+  line-height:1.9
+}
+.footer-col ul{list-style:none}
+.footer-col ul li::before{
+  content:'— ';
+  color:#F2B705;
+  opacity:0.5
+}
+.footer-brand{
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;
+  color:#F2B705;
+  margin-bottom:0.5rem
+}
+.footer-tagline{
+  font-size:0.8rem;
+  color:rgba(255,255,255,0.3);
+  letter-spacing:1px;
+  text-transform:uppercase
+}
+.footer-bottom{
+  text-align:center;
+  padding-top:2.5rem;
+  margin-top:2.5rem;
+  border-top:1px solid rgba(255,255,255,0.06);
+  color:rgba(255,255,255,0.2);
+  font-size:0.8rem;
+  max-width:1200px;
+  margin-left:auto;
+  margin-right:auto
+}
+
+/* === REVEAL === */
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:all 0.7s ease
+}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0)
+}
+
+/* === RESPONSIVE === */
+@media(max-width:992px){
+  .esencia-grid{grid-template-columns:1fr;gap:1rem}
+  .esencia-card{padding:1.5rem}
+  .contacto-grid{grid-template-columns:1fr}
+  .ratings-grid{gap:1rem}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  #hero h1{font-size:2.8rem}
+  .hero-logo{width:150px;height:150px}
+  .palm-leaf--1{width:140px;height:140px;top:-2%;left:-5%}
+  .palm-leaf--2{width:100px;height:100px;bottom:15%;right:-6%}
+  .palm-leaf--3{display:none}
+  #hero::after{height:100px}
+  .hero-scroll{bottom:3rem}
+  .section-title{font-size:2rem}
+  #hero .tagline{font-size:0.85rem;letter-spacing:2px}
+  .carousel-slide{height:55vh}
+  .carousel-btn{width:48px;height:48px}
+  .carousel-btn.prev{left:0.8rem}
+  .carousel-btn.next{right:0.8rem}
+  .menu-grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+  .testimonios-grid{grid-template-columns:1fr}
+  .ratings-grid{grid-template-columns:1fr;gap:1.5rem}
+  .footer-grid{grid-template-columns:1fr;gap:2rem}
+  .nav-links{display:none}
+  .contacto-map{height:280px}
+}
+@media(max-width:480px){
+  #hero h1{font-size:2rem}
+  .hero-logo{width:120px;height:120px}
+  .palm-leaf--1{display:none}
+  .palm-leaf--2{display:none}
+  #hero::after{height:60px}
+  .section-title{font-size:1.6rem}
+  .carousel-slide{height:45vh}
+  .carousel-counter{font-size:0.75rem;bottom:1rem;right:1rem}
+  .section{padding:4rem 1rem}
+  .menu-grid{gap:2rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <span class="nav-logo">Delicias Cubanas</span>
+  <ul class="nav-links">
+    <li><a href="#" data-target="carrusel">Galería</a></li>
+    <li><a href="#" data-target="esencia">Esencia</a></li>
+    <li><a href="#" data-target="menu">Menú</a></li>
+    <li><a href="#" data-target="testimonios">Reseñas</a></li>
+    <li><a href="#" data-target="contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<header id="hero">
+  <div class="hero-pattern"></div>
+
+  <div class="palm-leaf palm-leaf--1">
+    <svg viewBox="0 0 200 300" fill="none">
+      <path d="M100 300C100 300 40 220 20 160C0 100 10 40 40 10C70 20 60 60 50 90C40 120 20 160 30 200C40 240 100 280 100 300Z" fill="#F2B705"/>
+      <path d="M100 300C100 300 70 240 50 190C30 140 25 90 40 40C60 55 55 90 50 120C45 150 35 190 45 230C55 270 100 290 100 300Z" fill="#E5A100" opacity="0.6"/>
+      <path d="M100 300C100 300 150 230 170 170C190 110 185 50 160 20C130 30 140 70 150 100C160 130 180 170 170 210C160 250 100 290 100 300Z" fill="#F2B705" opacity="0.5"/>
+      <path d="M100 300C100 300 130 245 150 200C170 155 175 110 160 60C140 72 145 105 150 135C155 165 165 200 155 240C145 280 100 295 100 300Z" fill="#D94A2A" opacity="0.3"/>
+    </svg>
+  </div>
+  <div class="palm-leaf palm-leaf--2">
+    <svg viewBox="0 0 200 300" fill="none">
+      <path d="M100 300C100 300 40 220 20 160C0 100 10 40 40 10C70 20 60 60 50 90C40 120 20 160 30 200C40 240 100 280 100 300Z" fill="#F2B705"/>
+      <path d="M100 300C100 300 150 230 170 170C190 110 185 50 160 20C130 30 140 70 150 100C160 130 180 170 170 210C160 250 100 290 100 300Z" fill="#D94A2A" opacity="0.4"/>
+    </svg>
+  </div>
+  <div class="palm-leaf palm-leaf--3">
+    <svg viewBox="0 0 160 240" fill="none">
+      <path d="M80 240C80 240 32 176 16 128C0 80 8 32 32 8C56 16 48 48 40 72C32 96 16 128 24 160C32 192 80 224 80 240Z" fill="#F2B705" opacity="0.7"/>
+      <path d="M80 240C80 240 56 192 40 152C24 112 20 72 32 32C48 44 44 72 40 96C36 120 28 152 36 184C44 216 80 232 80 240Z" fill="#E5A100" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <div class="hero-content" id="heroContent">
+    <img src="./imagenes reales/logo.jpeg" alt="Delicias Cubanas" class="hero-logo" id="heroLogo" loading="eager">
+    <h1>Delicias Cubanas</h1>
+    <div class="hero-divider"></div>
+    <p class="tagline">Auténtica Comida Criolla Cubana</p>
+  </div>
+
+  <div class="hero-scroll">
+    <span class="hero-scroll-text">Descubre</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</header>
+
+<section id="carrusel">
+  <div class="carousel-wrapper" id="carouselWrapper">
+    <div class="carousel-track" id="carouselTrack"></div>
+    <div class="carousel-overlay"></div>
+    <div class="carousel-grain"></div>
+    <div class="carousel-progress" id="carouselProgress">
+      <div class="carousel-progress-bar" id="progressBar"></div>
+    </div>
+    <button class="carousel-btn prev" id="prevBtn" aria-label="Anterior">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="carousel-btn next" id="nextBtn" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+    </button>
+    <div class="carousel-dots" id="carouselDots"></div>
+    <div class="carousel-counter" id="carouselCounter">1 / 31</div>
+  </div>
+</section>
+
+<section id="esencia" class="section">
+  <div class="container">
+    <h2 class="section-title reveal">Nuestra Esencia</h2>
+    <p class="section-subtitle reveal">La tradición culinaria cubana hecha arte, servida con el corazón</p>
+    <div class="esencia-grid">
+      <div class="esencia-card reveal">
+        <div class="esencia-icon">
+          <svg viewBox="0 0 80 80" fill="none">
+            <circle cx="40" cy="40" r="38" fill="#F2B705" opacity="0.12"/>
+            <path d="M28 48C28 48 32 56 40 56C48 56 52 48 52 48" stroke="#F2B705" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M28 32C28 32 32 40 40 40C48 40 52 32 52 32" stroke="#F2B705" stroke-width="3.5" stroke-linecap="round"/>
+            <circle cx="40" cy="28" r="3" fill="#F2B705"/>
+            <circle cx="30" cy="36" r="2" fill="#F2B705"/>
+            <circle cx="50" cy="36" r="2" fill="#F2B705"/>
+          </svg>
+        </div>
+        <h3>Tradición Criolla</h3>
+        <p>Cada plato nace de recetas que han cruzado generaciones. El mojo, el sofrito, el cerdo asado lentamente y el arroz con frijoles negros que huele a hogar. Aquí honramos la esencia de la cocina cubana.</p>
+      </div>
+      <div class="esencia-card reveal">
+        <div class="esencia-icon">
+          <svg viewBox="0 0 80 80" fill="none">
+            <circle cx="40" cy="40" r="38" fill="#F2B705" opacity="0.12"/>
+            <path d="M40 22C40 22 28 30 28 40C28 48 36 54 40 58C44 54 52 48 52 40C52 30 40 22 40 22Z" stroke="#F2B705" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M35 38L39 42L45 36" stroke="#F2B705" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Servicio con Alma</h3>
+        <p>Nuestro equipo recibe a cada persona como parte de la familia. La calidez y atención del personal hacen que cada visita sea memorable, como lo confirman nuestros comensales una y otra vez en cada reseña.</p>
+      </div>
+      <div class="esencia-card reveal">
+        <div class="esencia-icon">
+          <svg viewBox="0 0 80 80" fill="none">
+            <circle cx="40" cy="40" r="38" fill="#F2B705" opacity="0.12"/>
+            <path d="M40 24L45.36 34.88L57 36.72L48.6 44.96L50.64 56.64L40 50.96L29.36 56.64L31.4 44.96L23 36.72L34.64 34.88L40 24Z" stroke="#F2B705" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M34 40L38 44L46 36" stroke="#F2B705" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Reconocimiento Constante</h3>
+        <p>Calificado como uno de los favoritos de Holguín. Los comensales destacan nuestra "comida deliciosa", "servicio excelente" y "ambiente acogedor". Somos un destino obligado para quien busca auténtica cocina cubana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ratings">
+  <div class="ratings-grid">
+    <div class="rating-item reveal">
+      <div class="rating-stars">
+        <svg viewBox="0 0 20 20" fill="#F2B705"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+        <svg viewBox="0 0 20 20" fill="#F2B705"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+        <svg viewBox="0 0 20 20" fill="#F2B705"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+        <svg viewBox="0 0 20 20" fill="#F2B705"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+        <svg viewBox="0 0 20 20" fill="none" stroke="#F2B705" stroke-width="1.5"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+      </div>
+      <div class="rating-number">4.0</div>
+      <div class="rating-label">de 5 estrellas</div>
+      <div class="rating-source">676 reseñas</div>
+    </div>
+    <div class="rating-item reveal">
+      <div class="rating-stars">
+        <svg viewBox="0 0 20 20" fill="#F2B705"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+        <svg viewBox="0 0 20 20" fill="#F2B705"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+        <svg viewBox="0 0 20 20" fill="#F2B705"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+        <svg viewBox="0 0 20 20" fill="#F2B705"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+        <svg viewBox="0 0 20 20" fill="#F2B705"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+      </div>
+      <div class="rating-number">4.7</div>
+      <div class="rating-label">de 5 estrellas</div>
+      <div class="rating-source">68 reseñas</div>
+    </div>
+    <div class="rating-item reveal">
+      <div class="rating-stars">
+        <svg viewBox="0 0 20 20" fill="#F2B705"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+        <svg viewBox="0 0 20 20" fill="#F2B705"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+        <svg viewBox="0 0 20 20" fill="#F2B705"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+        <svg viewBox="0 0 20 20" fill="#F2B705"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+        <svg viewBox="0 0 20 20" fill="none" stroke="#F2B705" stroke-width="1.5"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>
+      </div>
+      <div class="rating-number">3.6</div>
+      <div class="rating-label">de 5 estrellas</div>
+      <div class="rating-source">245 reseñas</div>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="section">
+  <div class="container">
+    <h2 class="section-title reveal">Nuestros Platos Principales</h2>
+    <p class="section-subtitle reveal">Selección de la cocina tradicional cubana — cada receta cuenta una historia</p>
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</section>
+
+<section id="testimonios" class="section">
+  <div class="container">
+    <h2 class="section-title reveal">Lo Que Dicen Nuestros Comensales</h2>
+    <p class="section-subtitle reveal">Reseñas reales de quienes han vivido la experiencia Delicias Cubanas</p>
+    <div class="testimonios-grid" id="testimoniosGrid"></div>
+  </div>
+</section>
+
+<section id="contacto" class="section">
+  <div class="container">
+    <h2 class="section-title reveal">Visítanos</h2>
+    <p class="section-subtitle reveal">Estamos en el corazón de Holguín, esperando por ti</p>
+    <div class="contacto-grid">
+      <div class="contacto-info reveal">
+        <h3>Contáctanos</h3>
+
+        <div class="contacto-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F2B705" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <div class="contacto-item-text">
+            <strong>Dirección</strong>
+            <span>Calle Dositeo Aguilera #78, altos<br>e/Garayalde y Agramonte<br>Holguín, Cuba</span>
+          </div>
+        </div>
+
+        <div class="contacto-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F2B705" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          <div class="contacto-item-text">
+            <strong>Teléfonos</strong>
+            <span>(+53) 2446 4397<br>(+53) 5206 6629</span>
+          </div>
+        </div>
+
+        <div class="contacto-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F2B705" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <div class="contacto-item-text">
+            <strong>Horario</strong>
+            <span>Lunes a Domingo — 12:00 PM a 12:00 AM</span>
+          </div>
+        </div>
+
+        <div class="contacto-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F2B705" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-6 8-14a8 8 0 10-16 0c0 8 8 14 8 14z"/>
+            <circle cx="12" cy="8" r="3"/>
+            <rect x="9" y="16" width="6" height="3" rx="1" fill="#F2B705" stroke="none"/>
+          </svg>
+          <div class="contacto-item-text">
+            <strong>Ubicación</strong>
+            <span>Tercera planta — Edificio con vista panorámica<br>Terraza exterior climatizada disponible</span>
+          </div>
+        </div>
+      </div>
+      <div class="contacto-map reveal">
+        <iframe src="https://maps.google.com/maps?q=Calle%20Dositeo%20Aguilera%20%2378%20Holgu%C3%ADn%20Cuba&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-brand">Delicias Cubanas</div>
+      <div class="footer-tagline">Auténtica Comida Criolla</div>
+      <p style="margin-top:1rem;font-size:0.85rem;color:rgba(255,255,255,0.4)">
+        La tradición y el sabor de Cuba en cada plato. Desde Holguín para el mundo.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Enlaces</h4>
+      <ul>
+        <li><a href="#" data-target="carrusel">Galería</a></li>
+        <li><a href="#" data-target="esencia">Nuestra Esencia</a></li>
+        <li><a href="#" data-target="menu">Menú</a></li>
+        <li><a href="#" data-target="testimonios">Reseñas</a></li>
+        <li><a href="#" data-target="contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <p>Calle Dositeo Aguilera #78<br>Holguín, Cuba</p>
+      <p style="margin-top:0.5rem">(+53) 2446 4397</p>
+      <p style="margin-top:0.5rem;font-size:0.8rem;color:rgba(255,255,255,0.3)">12:00 PM — 12:00 AM</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Delicias Cubanas — Hecho con amor por la cultura cubana
+  </div>
+</footer>
+
+<script>
+const imageCount = 31;
+const imagePath = './imagenes reales/';
+const track = document.getElementById('carouselTrack');
+const dots = document.getElementById('carouselDots');
+const counter = document.getElementById('carouselCounter');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const progressBar = document.getElementById('progressBar');
+let currentIndex = 0;
+let autoPlayInterval;
+const SLIDE_DURATION = 5000;
+let progressStartTime;
+let progressAnimFrame;
+
+for (let i = 1; i <= imageCount; i++) {
+  const slide = document.createElement('div');
+  slide.className = 'carousel-slide' + (i === 1 ? ' active' : '');
+  const img = document.createElement('img');
+  img.src = imagePath + i + '.jpeg';
+  img.alt = '';
+  img.loading = i <= 2 ? 'eager' : 'lazy';
+  slide.appendChild(img);
+  track.appendChild(slide);
+
+  const dot = document.createElement('button');
+  dot.className = 'carousel-dot' + (i === 1 ? ' active' : '');
+  dot.setAttribute('aria-label', 'Ir a imagen ' + i);
+  dot.addEventListener('click', () => goToSlide(i - 1));
+  dots.appendChild(dot);
+}
+
+function goToSlide(index) {
+  const slides = document.querySelectorAll('.carousel-slide');
+  track.style.transform = 'translateX(-' + (index * 100) + '%)';
+  slides.forEach((s, i) => {
+    s.classList.toggle('active', i === index);
+  });
+  document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === index);
+  });
+  currentIndex = index;
+  counter.textContent = (index + 1) + ' / ' + imageCount;
+  startProgress();
+}
+
+function startProgress() {
+  cancelAnimationFrame(progressAnimFrame);
+  progressBar.style.width = '0%';
+  progressStartTime = Date.now();
+  function animate() {
+    const elapsed = Date.now() - progressStartTime;
+    const pct = Math.min((elapsed / SLIDE_DURATION) * 100, 100);
+    progressBar.style.width = pct + '%';
+    if (pct < 100) {
+      progressAnimFrame = requestAnimationFrame(animate);
+    }
+  }
+  progressAnimFrame = requestAnimationFrame(animate);
+}
+
+function nextSlide() { goToSlide((currentIndex + 1) % imageCount); resetAutoPlay(); }
+function prevSlide() { goToSlide((currentIndex - 1 + imageCount) % imageCount); resetAutoPlay(); }
+
+prevBtn.addEventListener('click', prevSlide);
+nextBtn.addEventListener('click', nextSlide);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') { prevSlide(); }
+  if (e.key === 'ArrowRight') { nextSlide(); }
+});
+
+let touchStartX = 0;
+const wrapper = document.getElementById('carouselWrapper');
+wrapper.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
+wrapper.addEventListener('touchend', (e) => {
+  const diff = touchStartX - e.changedTouches[0].screenX;
+  if (Math.abs(diff) > 50) {
+    if (diff > 0) nextSlide(); else prevSlide();
+  }
+});
+
+function startAutoPlay() { autoPlayInterval = setInterval(nextSlide, SLIDE_DURATION); }
+function resetAutoPlay() { clearInterval(autoPlayInterval); startAutoPlay(); }
+
+wrapper.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+wrapper.addEventListener('mouseleave', startAutoPlay);
+wrapper.addEventListener('touchstart', () => clearInterval(autoPlayInterval));
+wrapper.addEventListener('touchend', startAutoPlay);
+
+startAutoPlay();
+goToSlide(0);
+
+/* Navbar scroll + smooth nav */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 80);
+});
+document.querySelectorAll('.nav-links a[data-target]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const el = document.getElementById(a.dataset.target);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+/* Hero 3D mouse parallax */
+const heroLogo = document.getElementById('heroLogo');
+const heroContent = document.getElementById('heroContent');
+document.getElementById('hero').addEventListener('mousemove', (e) => {
+  const rect = heroContent.getBoundingClientRect();
+  const x = (e.clientX - rect.left) / rect.width - 0.5;
+  const y = (e.clientY - rect.top) / rect.height - 0.5;
+  heroLogo.style.transform =
+    'rotateY(' + (x * 12) + 'deg) rotateX(' + (-y * 12) + 'deg)';
+});
+document.getElementById('hero').addEventListener('mouseleave', () => {
+  heroLogo.style.transform = 'rotateY(0deg) rotateX(0deg)';
+});
+
+/* MENU DATA */
+const dishes = [
+  { name: 'Ropa Vieja', desc: 'Carne de res desmechada cocinada lentamente con pimientos, cebolla y tomate. El clásico de la cocina cubana.' },
+  { name: 'Cerdo Asado', desc: 'Cerdo marinado en mojo criollo con naranja agria, ajo y comino, asado hasta alcanzar la ternura perfecta.' },
+  { name: 'Camarones al Ajillo', desc: 'Camarones frescos salteados en aceite de oliva con abundante ajo, toque de limón y perejil.' },
+  { name: 'Lechón Asado', desc: 'Pierna de cerdo asada lentamente con piel crujiente. Jugoso por dentro, dorado por fuera.' },
+  { name: 'Fricasé de Pollo', desc: 'Pollo guisado en salsa cubana con vino, especias y vegetales, acompañado de arroz con frijoles.' },
+  { name: 'Arroz con Pollo', desc: 'El clásico arroz cocido con pollo, pimientos y especias. Sabor que reconforta el alma.' },
+  { name: 'Pescado Frito', desc: 'Pescado fresco entero frito a la perfección, crujiente por fuera y suave por dentro.' },
+  { name: 'Bistec de Cerdo Encebollado', desc: 'Bistec de cerdo salteado con abundante cebolla caramelizada y especias criollas.' },
+  { name: 'Costilla Frita', desc: 'Costillas de cerdo adobadas y fritas hasta lograr ese punto crujiente y sabroso.' },
+  { name: 'Garbanzo con Carne', desc: 'Garbanzos guisados lentamente con carne de res, calabaza y especias tradicionales.' }
+];
+
+const menuGrid = document.getElementById('menuGrid');
+dishes.forEach(d => {
+  const card = document.createElement('div');
+  card.className = 'card-dish';
+  card.innerHTML = `
+    <div class="card-image-container" style="display:none"></div>
+    <h3 class="card-title">${d.name}</h3>
+    <p class="card-description">${d.desc}</p>
+    <div class="card-footer">
+      <span class="card-badge">Plato Tradicional</span>
+    </div>
+  `;
+  menuGrid.appendChild(card);
+});
+
+/* TESTIMONIOS */
+const testimonials = [
+  { text: 'Una joya de la cocina cubana. Descubrimos este lugar de casualidad y nos llevamos la mejor experiencia gastronómica de Cuba. El servicio fue excelente, la comida deliciosa y las porciones muy generosas.', author: 'Zay Cruz', source: 'Google Reviews', stars: 5 },
+  { text: 'Beautiful atmosphere and great food. My favorite dining experience in Cuba. The service was stellar, the staff friendly and attentive. Would come back again without hesitation.', author: 'Shakila', source: 'Google Reviews', stars: 5 },
+  { text: 'El personal es atento y amable, brindando un servicio excelente. La comida es deliciosa, con sabores auténticos que te transportan al corazón de Cuba. Altamente recomendado.', author: 'Jorge Acosta', source: 'Restaurant Guru', stars: 4 },
+  { text: 'The location is very well maintained, with a great ambiance and professional service. The staff were friendly, polite and attentive. Great value for the price!', author: 'Visitante', source: 'Google Reviews', stars: 5 },
+  { text: 'La comida es muy buena y abundante. La terraza en el tercer piso ofrece una vista espectacular. El mojito es de los mejores que he probado en Cuba.', author: 'Carlos M.', source: 'TripAdvisor', stars: 4 },
+  { text: 'Excelente atención, platos abundantes y llenos de sabor auténtico cubano. El cerdo asado es imperdible. Volveremos sin duda.', author: 'María G.', source: 'Google Reviews', stars: 5 }
+];
+
+const starSvg = '<svg viewBox="0 0 20 20" fill="#F2B705"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>';
+const starEmptySvg = '<svg viewBox="0 0 20 20" fill="none" stroke="#F2B705" stroke-width="1.5"><path d="M10 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L10 14.5l-4.8 2.5.9-5.4L2.2 7.7l5.4-.8L10 2z"/></svg>';
+
+const testimoniosGrid = document.getElementById('testimoniosGrid');
+testimonials.forEach(t => {
+  const card = document.createElement('div');
+  card.className = 'testimonio-card';
+  let starsHtml = '<div class="testimonio-stars">';
+  for (let i = 0; i < 5; i++) {
+    starsHtml += i < t.stars ? starSvg : starEmptySvg;
+  }
+  starsHtml += '</div>';
+  card.innerHTML = `
+    ${starsHtml}
+    <p class="testimonio-text">${t.text}</p>
+    <div class="testimonio-author">${t.author}</div>
+    <div class="testimonio-source">${t.source}</div>
+  `;
+  testimoniosGrid.appendChild(card);
+});
+
+/* SCROLL REVEAL */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
