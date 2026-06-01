@@ -1300,7 +1300,7 @@ for (let i = 1; i <= imageCount; i++) {
   const slide = document.createElement('div');
   slide.className = 'carousel-slide' + (i === 1 ? ' active' : '');
   const img = document.createElement('img');
-  img.src = imagePath + i + '.jpeg';
+  img.src = imagePath + i + '.webp';
   img.alt = '';
   img.loading = i <= 2 ? 'eager' : 'lazy';
   slide.appendChild(img);
