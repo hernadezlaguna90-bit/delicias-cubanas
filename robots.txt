@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hernadezlaguna90-bit.github.io/delicias-cubanas/sitemap.xml

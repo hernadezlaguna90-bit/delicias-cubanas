@@ -13,6 +13,9 @@
 <meta property="og:url" content="https://hernadezlaguna90-bit.github.io/delicias-cubanas/">
 <meta property="og:image" content="https://hernadezlaguna90-bit.github.io/delicias-cubanas/imagenes%20reales/logo.jpeg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Delicias Cubanas">
+<meta name="date" content="2026-06-01">
 <link rel="icon" type="image/jpeg" href="./imagenes reales/logo.jpeg">
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,22 +57,34 @@
       }
     },
     {
-      "@type": "Menu",
-      "@id": "https://hernadezlaguna90-bit.github.io/delicias-cubanas/#menu",
-      "name": "Menú de Delicias Cubanas",
-      "description": "Platos de comida criolla cubana",
-      "hasMenuItem": [
-        {"@type":"MenuItem","name":"Ropa Vieja","description":"Carne de res desmechada cocinada lentamente con pimientos, cebolla y tomate."},
-        {"@type":"MenuItem","name":"Cerdo Asado","description":"Cerdo marinado en mojo criollo con naranja agria, ajo y comino."},
-        {"@type":"MenuItem","name":"Camarones al Ajillo","description":"Camarones frescos salteados en aceite de oliva con abundante ajo."},
-        {"@type":"MenuItem","name":"Lechón Asado","description":"Pierna de cerdo asada lentamente con piel crujiente."},
-        {"@type":"MenuItem","name":"Fricasé de Pollo","description":"Pollo guisado en salsa cubana con vino, especias y vegetales."},
-        {"@type":"MenuItem","name":"Arroz con Pollo","description":"Arroz cocido con pollo, pimientos y especias."},
-        {"@type":"MenuItem","name":"Pescado Frito","description":"Pescado fresco entero frito a la perfección, crujiente por fuera y suave por dentro."},
-        {"@type":"MenuItem","name":"Bistec de Cerdo Encebollado","description":"Bistec de cerdo salteado con abundante cebolla caramelizada."},
-        {"@type":"MenuItem","name":"Costilla Frita","description":"Costillas de cerdo adobadas y fritas hasta lograr ese punto crujiente y sabroso."}
-      ]
-    }
+  "@type": "Menu",
+  "@id": "https://hernadezlaguna90-bit.github.io/delicias-cubanas/#menu",
+  "name": "Menú de Delicias Cubanas",
+  "description": "Platos de comida criolla cubana",
+  "hasMenuItem": [
+    {"@type":"MenuItem","name":"Ropa Vieja","description":"Carne de res desmechada cocinada lentamente con pimientos, cebolla y tomate."},
+    {"@type":"MenuItem","name":"Cerdo Asado","description":"Cerdo marinado en mojo criollo con naranja agria, ajo y comino."},
+    {"@type":"MenuItem","name":"Camarones al Ajillo","description":"Camarones frescos salteados en aceite de oliva con abundante ajo."},
+    {"@type":"MenuItem","name":"Lechón Asado","description":"Pierna de cerdo asada lentamente con piel crujiente."},
+    {"@type":"MenuItem","name":"Fricasé de Pollo","description":"Pollo guisado en salsa cubana con vino, especias y vegetales."},
+    {"@type":"MenuItem","name":"Arroz con Pollo","description":"Arroz cocido con pollo, pimientos y especias."},
+    {"@type":"MenuItem","name":"Pescado Frito","description":"Pescado fresco entero frito a la perfección, crujiente por fuera y suave por dentro."},
+    {"@type":"MenuItem","name":"Bistec de Cerdo Encebollado","description":"Bistec de cerdo salteado con abundante cebolla caramelizada."},
+    {"@type":"MenuItem","name":"Costilla Frita","description":"Costillas de cerdo adobadas y fritas hasta lograr ese punto crujiente y sabroso."}
+  ]
+},
+{
+  "@type":"FAQPage",
+  "@id":"https://hernadezlaguna90-bit.github.io/delicias-cubanas/#faq",
+  "mainEntity":[
+    {"@type":"Question","name":"¿Cuál es el horario de apertura?","acceptedAnswer":{"@type":"Answer","text":"Abrimos todos los días de 12:00 PM a 12:00 AM."}},
+    {"@type":"Question","name":"¿Dónde están ubicados?","acceptedAnswer":{"@type":"Answer","text":"Calle Dositeo Aguilera #78, altos e/Garayalde y Agramonte, Holguín, Cuba."}},
+    {"@type":"Question","name":"¿Cuáles son los platos más populares?","acceptedAnswer":{"@type":"Answer","text":"Ropa Vieja, Lechón Asado y Camarones al Ajillo."}},
+    {"@type":"Question","name":"¿Aceptan reservaciones?","acceptedAnswer":{"@type":"Answer","text":"Sí, llamando al (+53) 2446 4397 o al (+53) 5206 6629."}},
+    {"@type":"Question","name":"¿Tienen terraza?","acceptedAnswer":{"@type":"Answer","text":"Sí, terraza en el tercer piso con vista espectacular de Holguín."}},
+    {"@type":"Question","name":"¿Qué tipo de cocina ofrecen?","acceptedAnswer":{"@type":"Answer","text":"Cocina criolla cubana auténtica con recetas tradicionales."}}
+  ]
+}
   ]
 }
 </script>
@@ -562,6 +577,47 @@ nav.scrolled{
   letter-spacing:0.5px
 }
 
+/* === HISTORIA === */
+.historia-section{
+  background:linear-gradient(160deg,#0D0D0D 0%,#1A1A1A 40%,#2C1810 100%);
+  color:#fff;
+  padding:6rem 1.5rem
+}
+.historia-content{max-width:750px;margin:0 auto;text-align:center}
+.historia-content .section-title{color:#fff}
+.historia-text{
+  font-size:1rem;
+  line-height:1.8;
+  color:rgba(255,255,255,0.7);
+  margin-bottom:1rem;
+  font-weight:300
+}
+.historia-meta{
+  display:flex;
+  justify-content:center;
+  gap:3rem;
+  margin-top:2.5rem;
+  padding-top:2.5rem;
+  border-top:1px solid rgba(255,255,255,0.06)
+}
+.historia-meta-item{text-align:center}
+.historia-meta-number{
+  display:block;
+  font-family:'Playfair Display',serif;
+  font-size:2rem;
+  color:#F2B705;
+  font-weight:700
+}
+.historia-meta-label{
+  font-size:0.75rem;
+  color:rgba(255,255,255,0.4);
+  text-transform:uppercase;
+  letter-spacing:0.5px
+}
+@media(max-width:768px){
+  .historia-meta{flex-direction:column;gap:1.5rem}
+}
+
 /* === NUESTRA ESENCIA === */
 #esencia{background:#FFF9F0}
 .esencia-grid{
@@ -803,6 +859,38 @@ nav.scrolled{
   letter-spacing:0.5px
 }
 
+/* === FAQ === */
+#faq{background:#FFF9F0;padding:6rem 1.5rem}
+.faq-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1.5rem;
+  max-width:900px;
+  margin:0 auto
+}
+.faq-item{
+  background:#fff;
+  border-radius:16px;
+  padding:1.5rem;
+  box-shadow:0 4px 15px rgba(0,0,0,0.03);
+  border:1px solid rgba(0,0,0,0.04)
+}
+.faq-question{
+  font-family:'Playfair Display',serif;
+  font-weight:600;
+  font-size:1rem;
+  color:#450A0A;
+  margin-bottom:0.5rem
+}
+.faq-answer{
+  font-size:0.9rem;
+  color:#8E8E8E;
+  line-height:1.7
+}
+@media(max-width:768px){
+  .faq-grid{grid-template-columns:1fr}
+}
+
 /* === CONTACTO === */
 #contacto{
   background:#FFF9F0;
@@ -906,7 +994,12 @@ footer{
   font-size:0.8rem;
   max-width:1200px;
   margin-left:auto;
-  margin-right:auto
+  margin-right:auto;
+  line-height:1.8
+}
+.footer-updated{
+  font-size:0.7rem;
+  color:rgba(255,255,255,0.12)
 }
 
 /* === REVEAL === */
@@ -978,8 +1071,10 @@ footer{
    <span class="nav-logo">Delicias <span>Cubanas</span></span>
   <ul class="nav-links">
     <li><a href="#" data-target="carrusel">Galería</a></li>
+    <li><a href="#" data-target="historia">Historia</a></li>
     <li><a href="#" data-target="esencia">Esencia</a></li>
     <li><a href="#" data-target="menu">Menú</a></li>
+    <li><a href="#" data-target="faq">FAQ</a></li>
     <li><a href="#" data-target="testimonios">Reseñas</a></li>
     <li><a href="#" data-target="contacto">Contacto</a></li>
   </ul>
@@ -1089,6 +1184,30 @@ footer{
   </div>
 </section>
 
+<section id="historia" class="section historia-section">
+  <div class="container">
+    <div class="historia-content reveal">
+      <h2 class="section-title">Nuestra Historia</h2>
+      <p class="historia-text">Delicias Cubanas nace del amor por la cocina criolla y el deseo de compartir los sabores auténticos de Cuba con cada visitante. Desde nuestros inicios en Holguín, hemos mantenido vivas las recetas transmitidas por nuestras abuelas: el mojo perfecto, el cerdo asado con horas de paciencia, los frijoles negros cocidos a fuego lento.</p>
+      <p class="historia-text">Cada plato que servimos cuenta una historia. Cada cliente que recibe nuestra atención se convierte en parte de nuestra familia. Eso es Delicias Cubanas: tradición, sabor y alma.</p>
+      <div class="historia-meta">
+        <div class="historia-meta-item">
+          <span class="historia-meta-number">+15</span>
+          <span class="historia-meta-label">Años de tradición</span>
+        </div>
+        <div class="historia-meta-item">
+          <span class="historia-meta-number">+50</span>
+          <span class="historia-meta-label">Platos criollos</span>
+        </div>
+        <div class="historia-meta-item">
+          <span class="historia-meta-number">4.0</span>
+          <span class="historia-meta-label">Calificación promedio</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="esencia" class="section">
   <div class="container">
     <h2 class="section-title reveal">Nuestra Esencia</h2>
@@ -1183,6 +1302,39 @@ footer{
   </div>
 </section>
 
+<section id="faq" class="section">
+  <div class="container">
+    <h2 class="section-title reveal">Preguntas Frecuentes</h2>
+    <p class="section-subtitle reveal">Todo lo que necesitas saber antes de visitarnos</p>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <div class="faq-question">¿Cuál es el horario de apertura?</div>
+        <div class="faq-answer">Abrimos todos los días de 12:00 PM a 12:00 AM. Puedes venir a almorzar, cenar o simplemente a disfrutar de un mojito en nuestra terraza.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">¿Dónde están ubicados?</div>
+        <div class="faq-answer">Estamos en Calle Dositeo Aguilera #78, altos e/Garayalde y Agramonte, en el corazón de Holguín, Cuba. Frente al Parque Calixto García.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">¿Cuáles son los platos más populares?</div>
+        <div class="faq-answer">Nuestros clientes prefieren la Ropa Vieja, el Lechón Asado y los Camarones al Ajillo. Todos preparados al estilo criollo tradicional.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">¿Aceptan reservaciones?</div>
+        <div class="faq-answer">Sí, puedes llamarnos al (+53) 2446 4397 o al (+53) 5206 6629 para reservar tu mesa, especialmente en fines de semana.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">¿Tienen terraza o vista?</div>
+        <div class="faq-answer">Sí, contamos con una terraza en el tercer piso con una vista espectacular de Holguín. Perfecta para una cena romántica o una reunión con amigos.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">¿Qué tipo de cocina ofrecen?</div>
+        <div class="faq-answer">Cocina criolla cubana auténtica. Trabajamos con recetas tradicionales transmitidas por generaciones, usando ingredientes frescos y especias naturales.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="testimonios" class="section">
   <div class="container">
     <h2 class="section-title reveal">Lo Que Dicen Nuestros Comensales</h2>
@@ -1244,7 +1396,7 @@ footer{
         </div>
       </div>
       <div class="contacto-map reveal">
-        <iframe src="https://maps.google.com/maps?q=Calle%20Dositeo%20Aguilera%20%2378%20Holgu%C3%ADn%20Cuba&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://maps.google.com/maps?q=Calle%20Dositeo%20Aguilera%20%2378%20Holgu%C3%ADn%20Cuba&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación de Delicias Cubanas en Holguín, Cuba"></iframe>
       </div>
     </div>
   </div>
@@ -1263,8 +1415,10 @@ footer{
       <h4>Enlaces</h4>
       <ul>
         <li><a href="#" data-target="carrusel">Galería</a></li>
+        <li><a href="#" data-target="historia">Nuestra Historia</a></li>
         <li><a href="#" data-target="esencia">Nuestra Esencia</a></li>
         <li><a href="#" data-target="menu">Menú</a></li>
+        <li><a href="#" data-target="faq">FAQ</a></li>
         <li><a href="#" data-target="testimonios">Reseñas</a></li>
         <li><a href="#" data-target="contacto">Contacto</a></li>
       </ul>
@@ -1277,7 +1431,8 @@ footer{
     </div>
   </div>
   <div class="footer-bottom">
-    &copy; 2026 Delicias Cubanas — Hecho con amor por la cultura cubana
+    &copy; 2026 Delicias Cubanas — Hecho con amor por la cultura cubana<br>
+    <span class="footer-updated">Actualizado: junio 2026</span>
   </div>
 </footer>
 
@@ -1301,7 +1456,7 @@ for (let i = 1; i <= imageCount; i++) {
   slide.className = 'carousel-slide' + (i === 1 ? ' active' : '');
   const img = document.createElement('img');
   img.src = imagePath + i + '.webp';
-  img.alt = '';
+  img.alt = 'Delicias Cubanas — Foto ' + i;
   img.loading = i <= 2 ? 'eager' : 'lazy';
   slide.appendChild(img);
   track.appendChild(slide);
