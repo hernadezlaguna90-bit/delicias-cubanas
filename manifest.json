@@ -1,0 +1,16 @@
+{
+  "name": "Delicias Cubanas",
+  "short_name": "Delicias",
+  "description": "Auténtica Comida Criolla en Holguín, Cuba",
+  "start_url": "/delicias-cubanas/",
+  "display": "standalone",
+  "background_color": "#FEF2F2",
+  "theme_color": "#0D0D0D",
+  "icons": [
+    {
+      "src": "./imagenes reales/logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

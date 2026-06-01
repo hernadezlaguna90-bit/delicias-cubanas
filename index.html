@@ -3,17 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Delicias Cubanas — Auténtica Comida Criolla</title>
+<title>Delicias Cubanas — Auténtica Comida Criolla | Holguín</title>
+<meta name="description" content="Delicias Cubanas: auténtica comida criolla en Holguín. Ropa Vieja, Cerdo Asado, Lechón y más. Abierto todos los días de 12PM a 12AM. Tel: (+53) 2446 4397">
+<meta name="keywords" content="comida cubana, Holguín, Delicias Cubanas, criolla, Ropa Vieja, Cuba, restaurante">
+<link rel="canonical" href="https://hernadezlaguna90-bit.github.io/delicias-cubanas/">
+<meta property="og:title" content="Delicias Cubanas — Auténtica Comida Criolla">
+<meta property="og:description" content="Restaurante de comida criolla cubana en Holguín. Abierto todos los días de 12PM a 12AM.">
+<meta property="og:type" content="restaurant">
+<meta property="og:url" content="https://hernadezlaguna90-bit.github.io/delicias-cubanas/">
+<meta property="og:image" content="https://hernadezlaguna90-bit.github.io/delicias-cubanas/imagenes%20reales/logo.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/jpeg" href="./imagenes reales/logo.jpeg">
+<link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Restaurant",
+      "@id": "https://hernadezlaguna90-bit.github.io/delicias-cubanas/#restaurant",
+      "name": "Delicias Cubanas",
+      "description": "Auténtica Comida Criolla en Holguín, Cuba",
+      "url": "https://hernadezlaguna90-bit.github.io/delicias-cubanas/",
+      "telephone": ["+53 2446 4397", "+53 5206 6629"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Dositeo Aguilera #78, altos e/Garayalde y Agramonte",
+        "addressLocality": "Holguín",
+        "addressCountry": "CU"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "12:00",
+          "closes": "00:00"
+        }
+      ],
+      "servesCuisine": "Cuban",
+      "priceRange": "$$",
+      "image": "https://hernadezlaguna90-bit.github.io/delicias-cubanas/imagenes%20reales/logo.jpeg",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.0",
+        "bestRating": "5",
+        "ratingCount": "676"
+      }
+    },
+    {
+      "@type": "Menu",
+      "@id": "https://hernadezlaguna90-bit.github.io/delicias-cubanas/#menu",
+      "name": "Menú de Delicias Cubanas",
+      "description": "Platos de comida criolla cubana",
+      "hasMenuItem": [
+        {"@type":"MenuItem","name":"Ropa Vieja","description":"Carne de res desmechada cocinada lentamente con pimientos, cebolla y tomate."},
+        {"@type":"MenuItem","name":"Cerdo Asado","description":"Cerdo marinado en mojo criollo con naranja agria, ajo y comino."},
+        {"@type":"MenuItem","name":"Camarones al Ajillo","description":"Camarones frescos salteados en aceite de oliva con abundante ajo."},
+        {"@type":"MenuItem","name":"Lechón Asado","description":"Pierna de cerdo asada lentamente con piel crujiente."},
+        {"@type":"MenuItem","name":"Fricasé de Pollo","description":"Pollo guisado en salsa cubana con vino, especias y vegetales."},
+        {"@type":"MenuItem","name":"Arroz con Pollo","description":"Arroz cocido con pollo, pimientos y especias."},
+        {"@type":"MenuItem","name":"Pescado Frito","description":"Pescado fresco entero frito a la perfección, crujiente por fuera y suave por dentro."},
+        {"@type":"MenuItem","name":"Bistec de Cerdo Encebollado","description":"Bistec de cerdo salteado con abundante cebolla caramelizada."},
+        {"@type":"MenuItem","name":"Costilla Frita","description":"Costillas de cerdo adobadas y fritas hasta lograr ese punto crujiente y sabroso."}
+      ]
+    }
+  ]
+}
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Inter',sans-serif;
-  background:#FFF9F0;
-  color:#1A1A1A;
+  font-family:'Karla',sans-serif;
+  background:#FEF2F2;
+  color:#450A0A;
   line-height:1.6;
   overflow-x:hidden
 }
@@ -30,7 +96,7 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700}
   text-align:center;
   font-size:2.8rem;
   margin-bottom:0.5rem;
-  color:#1A1A1A
+  color:#450A0A
 }
 .section-subtitle{
   text-align:center;
@@ -66,6 +132,7 @@ nav.scrolled{
   color:#F2B705;
   font-weight:700
 }
+.nav-logo span{color:#DC2626}
 .nav-links{
   display:flex;
   gap:2rem;
@@ -78,7 +145,7 @@ nav.scrolled{
   transition:color 0.3s ease;
   letter-spacing:0.5px
 }
-.nav-links a:hover{color:#F2B705}
+.nav-links a:hover{color:#DC2626}
 
 /* === HERO === */
 #hero{
@@ -520,7 +587,7 @@ nav.scrolled{
 .esencia-card h3{
   font-size:1.3rem;
   margin-bottom:0.75rem;
-  color:#1A1A1A
+  color:#450A0A
 }
 .esencia-card p{
   font-size:0.95rem;
@@ -602,13 +669,17 @@ nav.scrolled{
   box-shadow:0px 15px 35px rgba(0,0,0,0.04);
   text-align:center;
   position:relative;
-  transition:transform 0.3s ease;
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
   display:flex;
   flex-direction:column;
-  align-items:center
+  align-items:center;
+  border-top:3px solid transparent
 }
 .card-dish:hover{
-  transform:translateY(-8px)
+  transform:translateY(-8px);
+  box-shadow:0px 20px 45px rgba(220,38,38,0.06);
+  border-top-color:#DC2626
+}
 }
 .card-image-container{
   margin-top:-60px;
@@ -763,7 +834,7 @@ nav.scrolled{
 .contacto-item-text strong{
   display:block;
   font-size:0.85rem;
-  color:#1A1A1A;
+  color:#DC2626;
   margin-bottom:2px;
   font-weight:600
 }
@@ -849,6 +920,14 @@ footer{
   transform:translateY(0)
 }
 
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
+  .hero-logo{transform:none!important}
+  .palm-leaf{animation:none!important}
+  .review-badge{display:none!important}
+  .carousel-image{animation:none!important}
+}
+
 /* === RESPONSIVE === */
 @media(max-width:992px){
   .esencia-grid{grid-template-columns:1fr;gap:1rem}
@@ -896,7 +975,7 @@ footer{
 <body>
 
 <nav id="navbar">
-  <span class="nav-logo">Delicias Cubanas</span>
+   <span class="nav-logo">Delicias <span>Cubanas</span></span>
   <ul class="nav-links">
     <li><a href="#" data-target="carrusel">Galería</a></li>
     <li><a href="#" data-target="esencia">Esencia</a></li>
@@ -1388,6 +1467,10 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js');
+}
 </script>
 </body>
 </html>
